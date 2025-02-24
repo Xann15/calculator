@@ -8,17 +8,12 @@
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
-    <!-- Sweet Alert -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <!-- Style -->
     <link rel="stylesheet" href="app.css">
 
-    <!-- ExcaliFont -->
-    <link href='Virgil.woff2' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
@@ -84,8 +79,8 @@
                     let data = JSON.parse(response);
 
                     if (data.error) {
-                        // If there is an error, show SweetAlert
-                        Swal.fire('Error', data.error, 'error');
+                        // If there is an error, show the error message on the screen
+                        $('#calculator-screen').val(data.error);
                     } else if (data.result) {
                         // If the result is valid, show the result on the screen
                         $('#calculator-screen').val(data.result);
@@ -93,7 +88,7 @@
                     }
                 },
                 error: function() {
-                    Swal.fire('Error', 'There was an error calculating the result', 'error');
+                    $('#calculator-screen').val('Error: There was an error calculating the result');
                 }
             });
         }
