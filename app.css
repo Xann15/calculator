@@ -1,0 +1,55 @@
+:root {
+    --color-primary: #ffffff;
+    --color-secondary: #f8f9fa;
+    --color-main: #ff9d00;
+    --color-main-2: #ffeccd;
+}
+
+.calculator {
+    width: 400px;
+    background-color: var(--color-secondary);
+    padding: 20px;
+}
+
+.calculator-screen {
+    height: 100px;
+    background-color: var(--color-primary);
+    border-radius: 20px;
+    pointer-events: none;
+    /* Mencegah input */
+    font-size: 30px;
+}
+
+.calculator-screen:disabled {
+    background-color: white !important;
+    color: black;
+    /* Pastikan teks tetap terlihat */
+    opacity: 1;
+    /* Hindari efek transparan dari Bootstrap */
+}
+
+.calculator-button {
+    background-color: var(--color-primary);
+    height: 65px;
+    width: 73px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px auto;
+    border: none;
+    border-radius: 15px;
+}
+
+.calculator-button:hover {
+    background-color: var(--color-secondary);
+}
+
+.calculator-function {
+    color: var(--color-main);
+}
+
+.calculator-equals {
+    border: 1px solid var(--color-main);
+    background-color: var(--color-main-2);
+}
